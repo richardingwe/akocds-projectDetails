@@ -1,0 +1,137 @@
+*,
+::before,
+::after {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+$orange-color: #f59643;
+$light-orange: #ffd7b6;
+$dark-color: #373a3c;
+$light-green: #55e659;
+
+body,
+html {
+	background-color: $light-orange;
+	// background-image: linear-gradient($orange-color, $light-green);
+}
+
+.container {
+	background-image: url(../img/bg.png);
+	background-repeat: no-repeat;
+	background-size: 800px;
+	background-position: center;
+}
+
+.label {
+	display: flex;
+	// justify-content: space-between;
+	align-items: center;
+	background-color: #0cb911;
+	margin-bottom: 20px;
+	padding-left: 10px;
+	border-radius: 0.2rem;
+	filter: drop-shadow(0px 0px 1px black);
+	border: none;
+
+	.label-title {
+		margin-top: 5px;
+		font-weight: bolder;
+		position: relative;
+		color: black;
+	}
+
+	.label-title::after {
+		content: ":";
+		position: absolute;
+		// left: 60px;
+	}
+
+	.label-details {
+		margin-top: 7px;
+		margin-left: 30px;
+		font-size: 1rem;
+		color: white;
+	}
+}
+
+.label:nth-child(odd) {
+	background-color: $orange-color;
+}
+
+@media (max-width: 768px) {
+	.label {
+		flex-direction: column;
+		justify-content: space-around;
+		align-items: center;
+		text-align: center;
+		padding: 15px 0;
+
+		.label-details {
+			margin-top: 0px;
+			margin-left: 0px;
+			color: white;
+		}
+
+		.label-title {
+			margin-bottom: 0px;
+		}
+
+		.label-title::after {
+			content: "";
+			position: static;
+			// left: 60px;
+		}
+	}
+
+	.container {
+		background-image: none;
+		text-align: center;
+	}
+
+	.general {
+		background-image: url(../img/bg-small.png);
+		background-repeat: no-repeat;
+		// background-size: 800px;
+		background-position: center;
+	}
+	.tender {
+		background-image: url(../img/bg-small.png);
+		background-repeat: no-repeat;
+		// background-size: 800px;
+		background-position: center;
+	}
+	.award {
+		background-image: url(../img/bg-small.png);
+		background-repeat: no-repeat;
+		// background-size: 800px;
+		background-position: center;
+	}
+	.contract {
+		background-image: url(../img/bg-small.png);
+		background-repeat: no-repeat;
+		// background-size: 800px;
+		background-position: center;
+	}
+}
+
+@media (max-width: 576px) {
+	.inputs {
+		width: 100%;
+	}
+	.intl-tel-input {
+		display: table-cell;
+		width: 86.5%;
+	}
+}
+
+@media (max-width: 400px) {
+	.inputs {
+		width: 100%;
+	}
+	.intl-tel-input {
+		display: table-cell;
+		width: 84.5%;
+	}
+}
